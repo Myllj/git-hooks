@@ -31,13 +31,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "npm run lint"
     }
   },
   "lint-staged": {
     "src/**/*.{js,vue}": [
-      "eslint",
-      "git add"
+     "npm run lint"
     ]
  }
 }
