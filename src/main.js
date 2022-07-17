@@ -7,5 +7,5 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-const b = 110
-// console.log(c, 222)
+const abc = 110
+console.log(abc, 222)
