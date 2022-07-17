@@ -7,4 +7,4 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-const a = 110
+const b = 110
