@@ -1,5 +1,16 @@
 ## ESlint结合Git Hooks（以vue-cli为例）
 
+**备注：**
+```
+据观察现在的vue-cli4脚手架已经集成git hook了，按照脚手架生成项目后，根目录会多出lint-staged.config配置文件，
+package.json也会默认有如下配置，如果项目集成eslint,每次git commit前都会去执行pre-commit钩子，然后读取lint-staged对应的配置文件lint-staged.config执行vue-cli-service lint命令
+
+"gitHooks": {
+    "pre-commit": "lint-staged"
+}
+
+```
+
 ### 1、本地通过vue-cli初始化项目
 ```
 <!-- 1、在某个目录通过vue-cli初始化vue项目，根据命令行提示选择eslint、babel，elint默认继承配置选择standard -->
@@ -49,11 +60,17 @@ npm i lint-staged -D
 
 <!-- 2、在上面2-1配置的基础上新增和修改配置 -->
 {
+   "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+{
   "lint-staged": {//这里有多种配置方式，可查看官网
    "src/**/*.{js,vue}": [
      "npm run lint"
    ]
-},
+}
 }
 
 <!-- 3、运行 -->

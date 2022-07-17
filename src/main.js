@@ -8,4 +8,4 @@ new Vue({
 }).$mount('#app')
 
 const c = 110
-console.log(c)
+console.log(c, 222)
